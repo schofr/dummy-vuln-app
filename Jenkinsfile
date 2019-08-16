@@ -17,7 +17,7 @@ pipeline {
         stage('Push Image') {
             steps {
                 sh "sudo docker login --username ${DOCKER_USR} --password ${DOCKER_PSW}"
-                sh "sudo docker push msaxena21/sysdig-test"
+                sh "sudo docker push msaxena21/sysdig-test:1.0"
                 sh "echo docker.io/msaxena21/sysdig-test > sysdig_secure_images"
             }
         }
