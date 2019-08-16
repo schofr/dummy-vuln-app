@@ -11,14 +11,14 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                sh "sudo docker build -f Dockerfile -t msaxena21/sysdig-test ."
+                sh "sudo docker build -f Dockerfile -t msaxena21/sysdig-test:1.0 ."
             }
         }
         stage('Push Image') {
             steps {
                 sh "sudo docker login --username ${DOCKER_USR} --password ${DOCKER_PSW}"
                 sh "sudo docker push msaxena21/sysdig-test:1.0"
-                sh "echo docker.io/msaxena21/sysdig-test > sysdig_secure_images"
+                sh "echo docker.io/msaxena21/sysdig-test:1.0 > sysdig_secure_images"
             }
         }
         stage('Scanning Image') {
