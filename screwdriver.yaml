@@ -1,0 +1,5 @@
+# Shared definition block
+shared:
+  # Source: https://hub.docker.com/repository/docker/schofr/cronagent
+  image: schofr/cronagent
+
