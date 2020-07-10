@@ -8,4 +8,5 @@ jobs:
         requires: [~commit]
         image: docker.io/schofr/cronagent:dev
         steps:
-            - step1: echo hello
+            - init: echo hello
+            - build: docker build -f Dockerfile -t schofr/cronagent:dev .
