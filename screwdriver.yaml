@@ -3,3 +3,9 @@ shared:
   # Source: https://hub.docker.com/repository/docker/schofr/cronagent
   image: schofr/cronagent
 
+jobs:
+    main:
+        requires: [~commit]
+        image: docker.io/schofr/cronagent:dev
+        steps:
+            - step1: echo hello
